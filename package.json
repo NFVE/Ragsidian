@@ -1,0 +1,27 @@
+{
+  "name": "obsidian-rag-plugin",
+  "version": "1.0.0",
+  "description": "Minimal RAG Chatbot für Obsidian",
+  "main": "main.js",
+  "scripts": {
+    "build": "esbuild main.ts --bundle --outfile=main.js --external:obsidian --loader:.ts=ts --format=cjs --target=es2020 --sourcemap --platform=node",
+    "build:watch": "esbuild main.ts --bundle --outfile=main.js --external:obsidian --loader:.ts=ts --format=cjs --target=es2020 --sourcemap --watch --platform=node",
+    "build:prod": "esbuild main.ts --bundle --outfile=main.js --external:obsidian --loader:.ts=ts --format=cjs --target=es2020 --minify --platform=node"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.6",
+    "esbuild": "^0.27.2",
+    "obsidian": "latest",
+    "tslib": "2.4.0",
+    "typescript": "4.7.4"
+  },
+  "dependencies": {
+    "@langchain/community": "^1.1.4",
+    "@langchain/core": "^1.1.13",
+    "@langchain/mongodb": "^1.1.0",
+    "@langchain/openai": "^1.2.2",
+    "axios": "^1.6.0",
+    "langchain": "^1.2.8",
+    "mongodb": "^6.3.0"
+  }
+}
